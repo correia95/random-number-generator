@@ -1,0 +1,97 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --card-2: #eceef2;
+  --ink: #1a1f27;
+  --ink-soft: #5e6874;
+  --line: #dde2e8;
+  --brand: #7c3aed;
+  --brand-soft: #efe9fc;
+  --bad: #d4351c;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1014;
+    --card: #171a20;
+    --card-2: #1e222b;
+    --ink: #e7eaef;
+    --ink-soft: #98a1ad;
+    --line: #272c35;
+    --brand: #a78bfa;
+    --brand-soft: #241d38;
+    --bad: #ff7a6b;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.app { max-width: 600px; margin: 0 auto; padding: 26px 16px 60px; }
+header h1 { font-size: clamp(1.5rem, 4.5vw, 2rem); margin: 0 0 6px; letter-spacing: -0.02em; }
+.tag { color: var(--ink-soft); margin: 0 0 20px; max-width: 58ch; font-size: 0.94rem; }
+
+.presets { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 16px; }
+.presets button {
+  border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit;
+  font-size: 0.78rem; font-weight: 600; padding: 6px 11px; border-radius: 999px; cursor: pointer;
+}
+.presets button:hover { border-color: var(--brand); }
+
+.controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.f { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.f > span { font-size: 0.74rem; font-weight: 600; color: var(--ink-soft); }
+.f input {
+  width: 100%; min-width: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card-2);
+  color: var(--ink); font-family: var(--mono); font-size: 1.15rem; font-weight: 700; padding: 11px 12px;
+  outline: none; text-align: center;
+}
+.f input:focus { border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-soft); }
+
+.opts { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+.cb { display: flex; align-items: center; gap: 7px; font-size: 0.88rem; color: var(--ink-soft); }
+.cb input[type=checkbox] { width: 17px; height: 17px; }
+.cb select { border: 1px solid var(--line); border-radius: 8px; background: var(--card-2); color: var(--ink); font: inherit; padding: 5px 8px; }
+
+.go {
+  width: 100%; border: 0; background: var(--brand); color: #fff; font: inherit;
+  font-weight: 800; font-size: 1.05rem; padding: 14px; border-radius: 12px; cursor: pointer;
+}
+.error { color: var(--bad); font-weight: 600; margin: 12px 0 0; text-align: center; }
+
+.out {
+  margin-top: 18px; background: var(--brand-soft); border-radius: 16px; padding: 22px 18px;
+  text-align: center; position: relative;
+}
+.out.one strong {
+  font-family: var(--mono); font-size: clamp(3rem, 18vw, 6rem); font-weight: 800;
+  letter-spacing: -0.03em; color: var(--brand); line-height: 1;
+}
+.nums { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.nums span {
+  font-family: var(--mono); font-weight: 700; font-size: 1.2rem; background: var(--card);
+  border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; min-width: 44px;
+}
+.copy {
+  margin-top: 14px; border: 1px solid var(--brand); background: transparent; color: var(--brand);
+  font: inherit; font-weight: 700; font-size: 0.82rem; padding: 7px 16px; border-radius: 8px; cursor: pointer;
+}
+
+.history { margin-top: 22px; }
+.history h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-soft); margin: 0 0 6px; }
+.history ol { margin: 0; padding-left: 20px; }
+.history li { font-family: var(--mono); font-size: 0.85rem; color: var(--ink-soft); padding: 2px 0; }
+
+.explainer { margin-top: 34px; border-top: 1px solid var(--line); padding-top: 10px; }
+.explainer h2 { font-size: 1.15rem; margin: 18px 0 8px; }
+.explainer h3 { font-size: 0.98rem; margin: 16px 0 6px; }
+.explainer p { color: var(--ink-soft); font-size: 0.92rem; }
+.explainer code { font-family: var(--mono); font-size: 0.85em; background: var(--card-2); padding: 1px 5px; border-radius: 4px; }
+.explainer footer { margin-top: 24px; text-align: center; font-size: 0.8rem; color: var(--ink-soft); }

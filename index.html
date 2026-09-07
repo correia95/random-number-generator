@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#7c3aed" />
+
+    <title>Random Number Generator — pick a range, get unbiased numbers</title>
+    <meta
+      name="description"
+      content="A free random number generator. Choose any range and how many numbers you want, with a no-repeats option and sorting. Uses the browser's cryptographically secure random source, so results are unbiased. Nothing is uploaded."
+    />
+    <link rel="canonical" href="https://random-number-generator.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Random Number Generator" />
+    <meta property="og:description" content="Any range, any count, no-repeats and sorting. Crypto-secure and unbiased, runs in your browser." />
+    <meta property="og:url" content="https://random-number-generator.correia95.workers.dev/" />
+    <meta property="og:image" content="https://random-number-generator.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Random Number Generator" />
+    <meta name="twitter:description" content="Any range, any count, no-repeats and sorting. Crypto-secure, client-side." />
+    <meta name="twitter:image" content="https://random-number-generator.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Random Number Generator",
+        "url": "https://random-number-generator.correia95.workers.dev/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Generate random numbers in any range with optional no-repeats and sorting, using the browser's cryptographically secure random source."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this random number generator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each number comes from the browser's crypto.getRandomValues function, which is cryptographically secure. Raw values are mapped into your range using rejection sampling so no outcome is more likely than another."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I generate numbers with no repeats?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Turn on 'No repeats' and every number in the result is unique. If you ask for more unique numbers than the range contains, it tells you instead of hanging."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this true random?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The browser generator is seeded from hardware entropy the operating system collects. For games, draws, decisions and test data it is indistinguishable from true randomness. It is not certified for regulated gambling or cryptographic key generation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my numbers sent anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Every number is generated on your device. Your range and options are stored in the page link, but the results are never saved or transmitted."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p style="text-align: center; padding: 20px">
+        This random number generator needs JavaScript. Choose a range and how many numbers you want,
+        with optional no-repeats and sorting; results use the browser's secure random source.
+      </p>
+    </noscript>
+  </body>
+</html>
