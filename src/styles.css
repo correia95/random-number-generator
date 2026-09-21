@@ -95,3 +95,8 @@ header h1 { font-size: clamp(1.5rem, 4.5vw, 2rem); margin: 0 0 6px; letter-spaci
 .explainer p { color: var(--ink-soft); font-size: 0.92rem; }
 .explainer code { font-family: var(--mono); font-size: 0.85em; background: var(--card-2); padding: 1px 5px; border-radius: 4px; }
 .explainer footer { margin-top: 24px; text-align: center; font-size: 0.8rem; color: var(--ink-soft); }
+
+/* a11y-contrast-fixes (auto, WCAG AA 4.5:1) */
+@media (prefers-color-scheme: dark) {
+  .go { color: #0b0b0f; }
+}
